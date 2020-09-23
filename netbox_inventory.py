@@ -12,7 +12,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 netbox_url = "https://192.168.58.160"
 netbox_token = "57722c4668bd23233d23140645847cc97fdd380a"
 # Define what you want to group devices by. Ensure they are variables found in the devices API and not somewhere else.
-group_by = ["site", "tenant", "rack", "model"]
+group_by = ["sites", "tenant", "rack", "model"]
 # This will need to be changed to black when moved up to green
 enclave = "Black"
 # Filter by the following site:
@@ -64,7 +64,7 @@ for dev in devices_get["results"]:
         "device_role": dev["device_role"][
             "name"
         ],  # Required hostsvars['KL001-R'] = {"device_type": dev["device_type"]["model"]}
-        "site": dev["site"]["name"],  # Required
+        "sites": dev["site"]["name"],  # Required
         "model": dev["device_type"]["model"],  # Required
         "enclave": dev["tags"],  # Formerly known as "enclave"
         "interfaces": {},  # placeholder for later
