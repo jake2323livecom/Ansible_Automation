@@ -1,0 +1,4 @@
+---
+- name: Apply build role
+  gather_facts: no
+  hosts: "{{ kit_number }}"
