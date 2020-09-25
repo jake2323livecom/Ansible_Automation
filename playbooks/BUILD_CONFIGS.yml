@@ -10,3 +10,8 @@
   - name: Create directory to store configuration files
     file: path="{{ playbook_dir }}/{{ hostvars['localhost'].start_time }}" state=directory
     delegate_to: localhost
+  - name: output unknown variable names
+    debug:
+      msg:
+      - "The local host thing is {{ hostvars['localhost'] }}"
+      - "The playbook directory referenced above is {{ playbook_dir }}"
