@@ -1,1 +1,5 @@
 
+---
+- name: build/define variables for device {{ inventory_hostname }}
+  include_vars: "{{ playbook_dir }}/global_vars/{{ item | upper }}.yml
+  with_items: "{{ enclave
