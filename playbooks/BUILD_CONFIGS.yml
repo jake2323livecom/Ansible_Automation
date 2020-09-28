@@ -21,7 +21,4 @@
 - import_playbook: mail_push.yml
   when: '"Mail Push" in delivery_method'
   
-- import_playbook: ssh_push.yml
-  when: '"SSH Push" in delivery_method'
-  
 - import_playbook: cleanup.yml
