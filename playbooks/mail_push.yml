@@ -9,10 +9,6 @@
       dest: "{{ playbook_dir }}/{{ start_time }}.zip"
       format: zip
     delegate_to: localhost
-  
-  - name: see if the files actually updated
-    debug:
-      msg: "System {{ inventory_hostname }} is using {{ mail_port }}"
     
   - name: Email when complete
     mail:
