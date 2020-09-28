@@ -14,7 +14,7 @@ netbox_token = "57722c4668bd23233d23140645847cc97fdd380a"
 # Define what you want to group devices by. Ensure they are variables found in the devices API and not somewhere else.
 group_by = ["sites", "tenant", "rack", "model"]
 # This will need to be changed to black when moved up to green
-enclave = "Black"
+enclave = "BLACK"
 # Filter by the following site:
 # site = os.environ['group']
 
