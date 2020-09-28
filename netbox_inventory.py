@@ -66,7 +66,7 @@ for dev in devices_get["results"]:
         ],  # Required hostsvars['KL001-R'] = {"device_type": dev["device_type"]["model"]}
         "sites": dev["site"]["name"],  # Required
         "model": dev["device_type"]["model"],  # Required
-        "enclave": dev["tags"],  # Formerly known as "enclave"
+        "enclave": dev["tags"][0]["name"],  # Formerly known as "enclave"
         "interfaces": {},  # placeholder for later
     }
     # Add config context variables without the config_context key
