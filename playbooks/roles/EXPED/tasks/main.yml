@@ -4,3 +4,8 @@
   include_vars: "{{ playbook_dir }}/global_vars/{{ item | upper }}.yml"
   with_items: "{{ enclave | default('BLACK') }}"
   delegate_to: localhost
+
+- name: Generate device config files for {{ inventory_hostname }}
+  template: src=../../templates/{{ device_type }}.j2 dest="{{ playbook_dir }}/{{ hostvars['localhost'].start_time }}/{{ inventory_hostname }}.cfg"
+  when: new_build == 'False'
+  delegate_to: localhost
