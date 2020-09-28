@@ -1,0 +1,9 @@
+---
+- name: after-action cleanup
+  gather_facts: no
+  hosts: localhost
+  tasks:
+  - name: delete the previous directories
+    file:
+      state: absent
+      path: "{{ playbook_dir }}/{{ start_time }}/"
