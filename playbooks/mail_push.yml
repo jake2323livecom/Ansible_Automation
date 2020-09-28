@@ -1,0 +1,21 @@
+---
+- name: Mail Push
+  gather_facts: no
+  hosts: localhost
+  tasks:
+  - name: zip the config files
+    archive:
+      path: "{{ playbook_dir }}/{{ start_time }}"
+      dest: "{{ playbook_dir }}/{{ start_time }}.zip"
+      format: zip
+    delegate_to: localhost
+    
+  - name: Email when complete
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: jake.richman95@gmail.com
+      password: 1234567Uj
+      to: "{{ user_email }}"
+      subject: complete configs for "{{ kit_number | join(", ")}}"
+      body: 'congrats, it worked biatch'
