@@ -12,10 +12,9 @@
     
   - name: Email when complete
     mail:
-      host: smtp.gmail.com
-      port: 465
-      username: jake.richman95@gmail.com
-      password: 1qaz2wsx!QAZ@WSX1
+      host: 192.168.58.160
+      port: 25
+      from: jake@192.168.58.160
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
