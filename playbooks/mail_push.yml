@@ -13,7 +13,7 @@
   - name: Email when complete
     mail:
       host: smtp.mail.yahoo.com
-      port: 465
+      port: 587
       username: jakerichman99@yahoo.com
       password: 1234567Uj
       to: "{{ user_email }}"
