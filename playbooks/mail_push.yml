@@ -12,12 +12,11 @@
     
   - name: Email when complete
     mail:
-      host: smtp.mail.yahoo.com
+      host: smtp.gmail.com
       port: 465
-      username: jakerichman99@yahoo.com
-      password: 1234567Uj
+      username: jake.richman95@gmail.com
+      password: 1qaz2wsx!QAZ@WSX1
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
-      secure: starttls
     delegate_to: localhost
