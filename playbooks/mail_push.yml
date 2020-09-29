@@ -14,8 +14,8 @@
     mail:
       host: smtp.office365.com
       port: 587
-      username: jake.richman95@gmail.com
-      password: 1qaz2wsx!QAZ@WSX1
+      username: jake.2323@live.com
+      password: 1234567Uj
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
