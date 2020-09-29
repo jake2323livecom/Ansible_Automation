@@ -19,5 +19,4 @@
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
-      secure: try
     delegate_to: localhost
