@@ -12,10 +12,11 @@
     
   - name: Email when complete
     mail:
-      host: smtp.office365.com
+      host: smtp.gmail.com
       port: 587
-      username: jake.2323@live.com
-      password: 1234567Uj
+      username: jake.richman95@gmail.com
+      password: 1qaz2wsx!QAZ@WSX1
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
+    delegate_to: localhost
