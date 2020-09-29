@@ -14,6 +14,7 @@
     mail:
       host: 192.168.58.160
       port: 25
+      attach: "{{ hostvars['localhost'].start_time }}.zip"
       from: jake@localhost
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
