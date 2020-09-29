@@ -14,7 +14,7 @@
     mail:
       host: 192.168.58.160
       port: 25
-      from: jake@192.168.58.160
+      from: jake@localhost
       to: "{{ user_email }}"
       subject: complete configs for "{{ kit_number | join(", ")}}"
       body: 'congrats, it worked biatch'
