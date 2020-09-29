@@ -12,8 +12,8 @@
     
   - name: Email when complete
     mail:
-      host: smtp.gmail.com
-      port: 465
+      host: smtp.office365.com
+      port: 587
       username: jake.richman95@gmail.com
       password: 1qaz2wsx!QAZ@WSX1
       to: "{{ user_email }}"
