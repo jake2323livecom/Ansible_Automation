@@ -1,7 +1,7 @@
 hostname: "{{ inventory_hostname }}"
 
-dns:
+dns-servers:
   - 172.29.2.1
   - 172.29.2.2
   
-mail_port: 465
+
