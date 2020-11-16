@@ -1,0 +1,12 @@
+---
+- name: debug hostnames
+  hosts: all
+  gather_facts: false
+  connection: local
+  
+  tasks:
+  
+    - name: debug hostnames
+      debug:
+        msg: {{ inventory_hostname }}
+  
