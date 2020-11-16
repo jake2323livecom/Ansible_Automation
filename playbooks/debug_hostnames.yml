@@ -8,5 +8,5 @@
   
     - name: debug hostnames
       debug:
-        msg: {{ inventory_hostname }}
+        msg: '{{ inventory_hostname }}'
   
