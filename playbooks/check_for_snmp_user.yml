@@ -10,4 +10,7 @@
       register: stuff
 
     - name: debug the output
-      debug: var=stuff.stdout_lines
+      debug:
+        msg: SUCCESSFUL
+      when:
+        - 'stuff.stdout_lines.Group-name == "test_group"'
