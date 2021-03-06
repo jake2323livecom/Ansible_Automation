@@ -3,7 +3,6 @@
   hosts: routers
   gather_facts: no
   connection: network_cli
-
   tasks:
     - name: register snmp user output as variable
       ios_command:
