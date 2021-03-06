@@ -10,4 +10,4 @@
       register: stuff
 
     - name: debug the output
-      - debug: var=stuff.stdout_lines
+      debug: var=stuff.stdout_lines
