@@ -1,0 +1,10 @@
+---
+- name: configure snmp for routers
+  gather_facts: no
+  hosts: routers
+  tasks:
+    - name: configure snmp for all routers, no switches
+      ios_config:
+        commands:
+          - snmp-server group test_group v3 noauth
+          - snmp-server user test_user test_group v3
