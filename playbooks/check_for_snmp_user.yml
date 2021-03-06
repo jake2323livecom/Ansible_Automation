@@ -10,4 +10,7 @@
       register: stuff
 
     - name: debug the output
-      debug: var=stuff
+      debug:
+        msg: SUCCESSFUL
+      when:
+        - 'stuff.stdout_lines[0] == "User name: test_user"'
