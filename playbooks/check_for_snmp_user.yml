@@ -1,0 +1,15 @@
+---
+- name: checks devices for specific snmp user
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: register snmp user output as variable
+      ios_command:
+        - show snmp user
+      register: stuff
+
+    - name: debug the output
+      debug:
+        msg: stuff.stdout
