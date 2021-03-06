@@ -1,0 +1,8 @@
+---
+- name: see if inventory provides variables
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: display all hostnames and their ip addresses
+      debug:
+        msg: "Device: {{ inventory_hostname }} IP address: {{ ansible_host }}"
