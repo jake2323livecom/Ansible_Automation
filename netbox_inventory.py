@@ -79,12 +79,13 @@ for dev in devices_get["results"]:
         )
 
     hostvars[dev["name"]].update(
-    {
-        "ansible_become": "yes",
-        "ansible_become_method": "enable",
-        "ansible_connection": "network_cli",
-        "ansible_network_os": "ios",
-    }
+        {
+            "ansible_become": "yes",
+            "ansible_become_method": "enable",
+            "ansible_connection": "network_cli",
+            "ansible_network_os": "ios",
+        }
+    )
     # This is only done in NTS to allow for b_ templates to work. This will be commented out in production
     # These next fields are not required. But because they need sub data (IE: Name) we can't do the same thing as config_context above.
     if dev["rack"]:  # if this device has a rack, add it to the dictionary
