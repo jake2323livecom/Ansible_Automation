@@ -11,4 +11,4 @@
 
     - name: debug the output
       debug:
-        msg: stuff.stdout
+        var: stuff
