@@ -11,4 +11,4 @@
 
     - name: debug the output
       debug:
-        var: "{{ stuff.stdout.stdout_lines }}"
+        var: "{{ stuff["stdout"]["stdout_lines"] }}"
