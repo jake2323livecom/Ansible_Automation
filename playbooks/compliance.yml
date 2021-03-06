@@ -1,0 +1,4 @@
+---
+- name: basic compliance testing
+  gather_facts: no
+  hosts: {{ device_name }}
