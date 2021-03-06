@@ -9,8 +9,8 @@ import os  # To take in environmental variables
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # User definable variables
-netbox_url = "https://192.168.58.160"
-netbox_token = "57722c4668bd23233d23140645847cc97fdd380a"
+netbox_url = "https://192.168.88.131"
+netbox_token = "1ec7f6872d96e73f885a97f1ed190a88b0a5f5ca"
 # Define what you want to group devices by. Ensure they are variables found in the devices API and not somewhere else.
 group_by = ["sites", "tenant", "rack", "model"]
 # This will need to be changed to black when moved up to green
