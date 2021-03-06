@@ -14,3 +14,6 @@
         msg: SUCCESSFUL
       when:
         - 'stuff.stdout_lines[0][0] == "User name: test_user"'
+        - 'stuff.stdout_lines[0][3] == "Authentication Protocol: None"'
+        - 'stuff.stdout_lines[0][4] == "Privacy Protocol: None"'
+        - 'stuff.stdout_lines[0][5] == "Group-name: test_group"'
