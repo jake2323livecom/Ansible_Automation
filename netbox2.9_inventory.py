@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import requests  # To perform the API queries
 import json  # To format and display the final output
 import urllib3  # To disable SSL warning below
@@ -283,4 +284,3 @@ overall_list = {}
 overall_list.update(groups)
 overall_list.update(final_host_list)
 print(json.dumps(overall_list, indent=4, sort_keys=True))
-
