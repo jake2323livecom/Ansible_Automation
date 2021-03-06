@@ -174,7 +174,6 @@ for ip in ip_addresses_get["results"]:
                 ).broadcast_address
             )
 
-            
     except:
         pass
 
