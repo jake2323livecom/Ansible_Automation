@@ -60,7 +60,7 @@ prefixes_get = requests.get(
 hostvars = {}
 for dev in devices_get["results"]:
     # Unpack tags from the new data model
-    tags = [tag['name'] for tag in dev['tags']]
+    tags = [tag["name"] for tag in dev["tags"]]
 
     # if dev['primary_ip'] is not None:
     # This can be enabled if/when you want to only include devices with a primary IP
