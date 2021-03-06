@@ -1,12 +1,12 @@
 ---
-- name: checks devices for specific snmp user
+- name: configure snmp for routers
   gather_facts: no
   hosts: routers
   connection: network_cli
   tasks:
-    - name: register snmp user output as variable
+    - name: register output as a variable
       ios_command:
-        - show snmp user
+        commands: show snmp user
       register: stuff
 
     - name: debug the output
