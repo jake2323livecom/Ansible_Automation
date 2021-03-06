@@ -1,7 +1,7 @@
 ---
 - name: checks devices for specific snmp user
-  hosts: routers
   gather_facts: no
+  hosts: routers
   connection: network_cli
   tasks:
     - name: register snmp user output as variable
