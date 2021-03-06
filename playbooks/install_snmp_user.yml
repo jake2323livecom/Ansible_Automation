@@ -2,6 +2,7 @@
 - name: configure snmp for routers
   gather_facts: no
   hosts: routers
+  connection: network_cli
   tasks:
     - name: configure snmp for all routers, no switches
       ios_config:
