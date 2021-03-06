@@ -11,4 +11,4 @@
 
     - name: debug the output
       debug:
-        var: stuff
+        var: stuff['stdout']['stdout_lines']
