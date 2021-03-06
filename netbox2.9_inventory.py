@@ -8,8 +8,8 @@ import ipaddress  # To get the network id without having to do an API call to fi
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # User definable variables
-netbox_url = "http://192.168.99.210"
-netbox_token = "d343b766e422853a069ffdb6cdb7d73a3ce8c672"
+netbox_url = "http://192.168.88.131"
+netbox_token = "1ec7f6872d96e73f885a97f1ed190a88b0a5f5ca"
 # Define what you want to group devices by.
 # Ensure they are variables found in the devices API and not somewhere else.
 group_by = ["sites", "tenant", "rack", "model"]
