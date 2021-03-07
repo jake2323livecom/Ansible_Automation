@@ -35,7 +35,7 @@
 
     - name: Find and store interfaces that are supposed to be no-passive
       set_fact:
-        non_passive_interfaces: "{{ non_passive_interfaces }} + [ '{{ item.split(' ')[2] }}' ]"
+        non_passive_interfaces: "{{ non_passive_interfaces }} + [ '{{ item.split()[2] }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when:
         - "' no passive-interface' in item"
