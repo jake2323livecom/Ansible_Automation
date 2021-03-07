@@ -11,4 +11,4 @@
       register: eigrp_interfaces
 
     - name: display the output for examination
-      debug: eigrp_interfaces.stdout_lines[0][3:].split()[0]
+      debug: 'eigrp_interfaces.stdout_lines[0][3:].split()[0]'
