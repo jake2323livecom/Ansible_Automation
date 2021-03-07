@@ -19,9 +19,6 @@ router eigrp TEST
    {{ topology_command }}
 {% endfor %}
   exit-af-topology
-{% for network in networks %}
-  network {{ network }}
-{% endfor %}
 {% for general_command in general_commands %}
   {{ general_command }}
 {% endfor %}
