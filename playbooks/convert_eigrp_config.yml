@@ -9,9 +9,6 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
-    - name: store aspects in variables
+    - name: store new variables
       vars:
         - first_line: "{{ eigrp_config.stdout_lines[0][0] | upper }}"
-
-    - name: hopefully display the new variable
-      debug: var=first_line
