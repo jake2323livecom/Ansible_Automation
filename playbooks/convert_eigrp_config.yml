@@ -11,7 +11,7 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
-    - name: store new variables
+    - name: Find and store general eigrp commands
       set_fact:
         general_commands: "{{ general_commands }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
