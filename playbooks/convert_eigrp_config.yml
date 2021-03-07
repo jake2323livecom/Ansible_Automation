@@ -13,9 +13,9 @@
 
     - name: store new variables
       set_fact:
-        networks: "{{ networks }} + [ '{{ item | regex_search('(network.+)') }}' ]"
+        networks: "{{ networks }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
-      when: '{{ item | regex_search("(network.+)") != "" }}'
+      when: "{{ 'network' in item }}"
 
 
     - name: display new variable
