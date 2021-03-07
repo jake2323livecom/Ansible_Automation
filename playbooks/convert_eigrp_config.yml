@@ -19,4 +19,3 @@
   tasks:
     - name: show output
       debug: var=general_commands
-      when: "{{ '15' in eigrp_config.stdout_lines[0][0] }}"
