@@ -1,23 +1,25 @@
 router eigrp TEST
  !
- address-family ipv4 unicast autonomous-system 15
+ address-family ipv4 unicast autonomous-system {{ AS }}
   !
   af-interface default
-   authentication mode md5
-   authentication key-chain TEST
    passive-interface
   exit-af-interface
   !
-  af-interface GigabitEthernet1
+{% for interface in non_passive_interfaces %}
+  af-interface {{ interface }}
    no passive-interface
+   authentication mode md5
+   authentication key-chain TEST
   exit-af-interface
   !
+{% endfor %}
   topology base
-   distribute-list 99 in GigabitEthernet1
-   redistribute ospf 1 metric 100 1 1 1 1
+{% for topology_base_command in topology_base_commands %}
+   {{ topology_base_command }}
+{% endfor %}
   exit-af-topology
-  network 2.2.2.2 0.0.0.0
-  network 192.168.88.0
-  eigrp router-id 192.168.88.130
-  eigrp stub connected summary
+{% for general_command in general_commands %}
+  {{ general_command }}
+{% endfor %}
  exit-address-family

@@ -4,7 +4,6 @@
   hosts: vIOS
   connection: network_cli
   vars:
-    head_commands: []
     general_commands: []
     topology_base_commands: []
     non_passive_interfaces: []
@@ -17,9 +16,7 @@
 
     - name: Find and store first eigrp statements for any AS
       set_fact:
-        head_commands: "{{ head_commands }} + [ '{{ item.split()[2] }}' ]"
-      with_items: "{{ eigrp_config.stdout_lines[0] }}"
-      when: "'router eigrp' in item"
+        AS: eigrp_config.stdout_lines[0][0].split()[2]
 
     - name: Find and store general eigrp commands
       set_fact:
