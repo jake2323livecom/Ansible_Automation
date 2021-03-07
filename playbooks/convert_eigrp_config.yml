@@ -10,5 +10,5 @@
       register: eigrp_config
 
     - name: store new variables
-      vars:
-        - first_line: "{{ eigrp_config.stdout_lines[0][0] | upper }}"
+      set_fact:
+        first_line: "{{ eigrp_config.stdout_lines[0][0] | upper }}"
