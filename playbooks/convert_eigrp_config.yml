@@ -17,21 +17,18 @@
     - name: Find and store first eigrp statements for any AS
       set_fact:
         AS: "{{ eigrp_config.stdout_lines[0][0].split()[2] }}"
-      ignore_errors: yes
 
     - name: Find and store general eigrp commands
       set_fact:
         general_commands: "{{ general_commands }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: ('network' in item) or (item[:6] == ' eigrp')
-      ignore_errors: yes
 
     - name: Find and store topology base commands
       set_fact:
         topology_base_commands: "{{ topology_base_commands }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: ('distribute-list' in item) or ('redistribute' in item)
-      ignore_errors: yes
 
     - name: Find and store interfaces that are supposed to be no-passive
       set_fact:
@@ -39,7 +36,6 @@
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when:
         - "' no passive-interface' in item"
-      ignore_errors: yes
 
     - name: send new config to device
       ios_config:
