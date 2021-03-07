@@ -39,6 +39,7 @@
 
     - name: send new config to device
       ios_config:
+        save_when: modified
         src: test.j2
         backup: yes
         backup_options:
