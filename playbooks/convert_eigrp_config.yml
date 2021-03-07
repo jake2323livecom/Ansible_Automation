@@ -8,8 +8,8 @@
     - name: gather necessary info and store into variables
       ios_command:
         commands: show ip eigrp interface
-      register: eigrp_interfaces
+      register: show run | s r e
 
     - name: display output
       debug:
-        msg: "{{ eigrp_interfaces.stdout_lines[0][3:] }}"
+        msg: "{{ eigrp_interfaces.stdout_lines }}"
