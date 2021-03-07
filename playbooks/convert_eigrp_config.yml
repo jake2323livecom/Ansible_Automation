@@ -1,0 +1,14 @@
+---
+- name: This playbook will convert a traditional eigrp config to named mode
+  gather_facts: no
+  hosts: routers
+  connection: network_cli
+
+  tasks:
+    - name: gather necessary info and store into variables
+      ios_command:
+        commands: show ip eigrp interface
+      register: eigrp_interfaces
+
+    - name: display the output for examination
+      debug: var=eigrp_interfaces
