@@ -11,7 +11,7 @@
 
     - name: store new variables
       set_fact:
-        networks: '{{ eigrp_config.stdout_lines[0] | select("match", "network*") }}'
+        networks: '{{ eigrp_config.stdout_lines[0] | select("match", "network*") | list}}'
 
     - name: display new variable
       debug: var=networks
