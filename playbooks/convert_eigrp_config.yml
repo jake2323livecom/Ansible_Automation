@@ -3,6 +3,8 @@
   gather_facts: no
   hosts: vIOS
   connection: network_cli
+  vars:
+    networks: []
   tasks:
     - name: gather necessary info and store into variables
       ios_command:
@@ -11,7 +13,9 @@
 
     - name: store new variables
       set_fact:
-        networks: '{{ eigrp_config.stdout_lines[0] | select("match", "network*") | list}}'
+        networks: "{{ networks }} + [ '{{ item | regex_search('(network)') }}' ]"
+      with_items: "{{ eigrp_config.stdout_lines[0] }}"
+
 
     - name: display new variable
       debug: var=networks
