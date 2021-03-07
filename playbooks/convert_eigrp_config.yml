@@ -12,4 +12,4 @@
     - name: create new templated config
       template:
         src: test.j2
-        dest: /home/jake/output/
+        dest: /home/jake/output/named_eigrp.cfg
