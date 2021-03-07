@@ -16,7 +16,7 @@
 
     - name: Find and store first eigrp statements for any AS
       set_fact:
-        AS: eigrp_config.stdout_lines[0][0].split()[2]
+        AS: "{{ eigrp_config.stdout_lines[0][0].split()[2] }}"
 
     - name: Find and store general eigrp commands
       set_fact:
