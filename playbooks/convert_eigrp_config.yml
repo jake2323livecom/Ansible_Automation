@@ -11,5 +11,4 @@
       register: eigrp_config
 
     - name: display output
-      debug:
-        msg: "{{ eigrp_config.stdout_lines }}"
+      debug: var=eigrp_config
