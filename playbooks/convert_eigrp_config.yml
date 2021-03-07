@@ -15,7 +15,7 @@
       set_fact:
         networks: "{{ networks }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
-      when: "{{ 'network' in item or item.startswith('eigrp') }}"
+      when: ('network') in item or (item.startswith('eigrp'))
 
 
     - name: display new variable
