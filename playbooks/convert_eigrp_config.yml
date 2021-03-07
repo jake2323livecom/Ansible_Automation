@@ -12,4 +12,4 @@
 
     - name: display output
       debug:
-        msg: "{{ eigrp_interfaces.stdout_lines[0][3:].split()[0] }}"
+        msg: "{{ eigrp_interfaces.stdout_lines[0][3:] }}"
