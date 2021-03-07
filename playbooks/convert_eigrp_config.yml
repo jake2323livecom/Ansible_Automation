@@ -37,5 +37,7 @@
       when:
         - "' no passive-interface' in item"
 
-    - name: display new variable
-      debug: var=non_passive_interfaces
+    - name: make the configs
+      template:
+        src: test.j2
+        dest: /home/jake/output/named_eigrp.cfg
