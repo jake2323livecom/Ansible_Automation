@@ -15,3 +15,8 @@
   connection: local
   vars:
     - general_commands: '{{ [ line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network")) ] }}'
+  
+  tasks:
+    - name: show output
+      debug: var=general_commands
+      when: "{{ '15' in eigrp_config.stdout_lines[0][0] }}"
