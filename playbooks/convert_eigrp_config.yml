@@ -5,6 +5,8 @@
   connection: network_cli
   vars:
     general_commands: []
+    topology_base_commands: []
+
   tasks:
     - name: gather necessary info and store into variables
       ios_command:
@@ -17,6 +19,12 @@
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: ('network' in item) or (item[:6] == ' eigrp')
 
+    - name: Find and store topology base commands
+      set_fact:
+        topology_base_commands: "{{ topology_base_commands }} + [ '{{ item }}' ]"
+      with_items: "{{ eigrp_config.stdout_lines[0] }}"
+      when: ('distribute-list' in item) or ('redistribute' in item)
+
 
     - name: display new variable
-      debug: var=general_commands
+      debug: var=topology_base_commands
