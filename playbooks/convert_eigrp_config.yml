@@ -9,18 +9,9 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
-    - name: create the directory to store the files
-      file:
-        path: /home/jake/output/
-        state: directory
-        mode: 777
-      delegate_to: localhost
+    - name: store aspects in variables
+      vars:
+        - first_line: "{{ eigrp_config.stdout_lines[0][0] | upper }}"
 
-    - name: create new templated config
-      template:
-        src: test.j2
-        dest: /home/jake/output/named_eigrp.cfg
-      register: output
-
-    - name: hopefully display the output
-      debug: var=output
+    - name: hopefully display the new variable
+      debug: var=first_line
