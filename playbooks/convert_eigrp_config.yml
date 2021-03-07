@@ -7,6 +7,7 @@
     head_commands: []
     general_commands: []
     topology_base_commands: []
+    non_passive_interfaces: []
 
   tasks:
     - name: gather necessary info and store into variables
@@ -32,6 +33,14 @@
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: ('distribute-list' in item) or ('redistribute' in item)
 
+    - name: Find and store interfaces that are supposed to be no-passive
+      set_fact:
+        correct: "'yes' if ' passive-interface default' in eigrp_config.stdout_lines[0] else 'no'"
+        non_passive_interfaces: "{{ non_passive_interfaces }} + [ '{{ item }}' ]"
+      with_items: "{{ eigrp_config.stdout_lines[0] }}"
+      when:
+        - "' passive-interface default' in eigrp_config.stdout_lines[0]"
+        - "' no passive-interface' in item"
 
     - name: display new variable
-      debug: var=head_commands
+      debug: var=non_passive_interfaces
