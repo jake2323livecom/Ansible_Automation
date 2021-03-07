@@ -8,7 +8,7 @@
     - name: gather necessary info and store into variables
       ios_command:
         commands: show ip eigrp interface
-      register: show run | s r e
+      register: "show run | s r e"
 
     - name: display output
       debug:
