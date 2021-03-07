@@ -4,6 +4,7 @@
   hosts: vIOS
   connection: network_cli
   vars:
+    head_commands: []
     general_commands: []
     topology_base_commands: []
 
@@ -12,6 +13,12 @@
       ios_command:
         commands: show run | s router eigrp
       register: eigrp_config
+
+    - name: Find and store first eigrp statements for any AS
+      set_fact:
+        head_commands: "{{ head_commands }} + [ '{{ item }}' ]"
+      with_items: "{{ eigrp_config.stdout_lines[0] }}"
+      when: "'router eigrp' in item"
 
     - name: Find and store general eigrp commands
       set_fact:
@@ -27,4 +34,4 @@
 
 
     - name: display new variable
-      debug: var=topology_base_commands
+      debug: var=head_commands
