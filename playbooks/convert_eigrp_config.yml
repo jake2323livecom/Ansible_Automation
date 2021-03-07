@@ -10,5 +10,6 @@
         commands: show ip eigrp interface
       register: eigrp_interfaces
 
-    - name: display the output for examination
-      debug: hello
+    - name: display output
+      debug:
+        msg: hello
