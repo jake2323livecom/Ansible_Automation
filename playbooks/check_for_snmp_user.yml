@@ -11,7 +11,7 @@
 
     - name: debug the output
       debug:
-        msg: UNSUCCESSFUL
+        msg: NOT COMPLIANT
       when: '(stuff.stdout_lines[0][0] != "User name: test_user") or 
              (stuff.stdout_lines[0][3] != "Authentication Protocol: None") or 
              (stuff.stdout_lines[0][4] != "Privacy Protocol: None") or 
