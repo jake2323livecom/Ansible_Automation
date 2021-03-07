@@ -9,6 +9,12 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
+    - name: create the directory to store the files
+      file:
+        path: /home/jake/output/
+        state: directory
+        mode: 777
+
     - name: create new templated config
       template:
         src: test.j2
