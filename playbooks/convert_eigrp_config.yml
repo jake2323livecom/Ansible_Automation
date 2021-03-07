@@ -14,8 +14,13 @@
         path: /home/jake/output/
         state: directory
         mode: 777
+      delegate_to: localhost
 
     - name: create new templated config
       template:
         src: test.j2
         dest: /home/jake/output/named_eigrp.cfg
+      register: output
+
+    - name: hopefully display the output
+      debug: var=output
