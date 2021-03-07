@@ -17,7 +17,7 @@
 
     - name: Find and store first eigrp statements for any AS
       set_fact:
-        head_commands: "{{ head_commands }} + [ '{{ item }}' ]"
+        head_commands: "{{ head_commands }} + [ '{{ item.split()[2] }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: "'router eigrp' in item"
 

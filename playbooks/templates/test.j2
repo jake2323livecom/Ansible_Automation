@@ -1,5 +1,23 @@
-{% set GRP1 = eigrp_config.stdout_lines[0] | select("match", "eigrp*") %}
-{% set GRP2 = eigrp_config.stdout_lines[0] | select("match", "network*") %}
-{% for line in GRP1|list + GRP2|list %}
-  {{ line }}
-{% endfor %}
+router eigrp TEST
+ !
+ address-family ipv4 unicast autonomous-system 15
+  !
+  af-interface default
+   authentication mode md5
+   authentication key-chain TEST
+   passive-interface
+  exit-af-interface
+  !
+  af-interface GigabitEthernet1
+   no passive-interface
+  exit-af-interface
+  !
+  topology base
+   distribute-list 99 in GigabitEthernet1
+   redistribute ospf 1 metric 100 1 1 1 1
+  exit-af-topology
+  network 2.2.2.2 0.0.0.0
+  network 192.168.88.0
+  eigrp router-id 192.168.88.130
+  eigrp stub connected summary
+ exit-address-family
