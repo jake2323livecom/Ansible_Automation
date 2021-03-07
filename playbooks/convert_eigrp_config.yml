@@ -12,3 +12,6 @@
     - name: store new variables
       set_fact:
         first_line: "{{ eigrp_config.stdout_lines[0][0] | upper }}"
+
+    - name: display new variable
+      debug: var=first_line
