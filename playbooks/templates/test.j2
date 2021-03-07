@@ -1,3 +1,5 @@
-{% for general_command in [ line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network")) ] %}
+{% set GRP1 = eigrp_config.stdout_lines[0] | select("match", "eigrp*") %}
+{% set GRP2 = eigrp_config.stdout_lines[0] | select("match", "network*") %}
+{% for line in GRP1|list + GRP2|list %}
   {{ general_command }}
 {% endfor %}
