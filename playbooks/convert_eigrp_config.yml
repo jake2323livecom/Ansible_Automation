@@ -37,7 +37,12 @@
       when:
         - "' no passive-interface' in item"
 
-    - name: make the configs
-      template:
+    - name: send new config to device
+      ios_config:
         src: test.j2
-        dest: /home/jake/output/named_eigrp.cfg
+        backup: yes
+        backup_options:
+          filename: "{{ inventory_hostname}}_backup.cfg"
+          dir_path: /home/user
+        before:
+          - no router eigrp {{ AS }}
