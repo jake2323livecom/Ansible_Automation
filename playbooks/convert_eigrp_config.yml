@@ -7,8 +7,8 @@
   tasks:
     - name: gather necessary info and store into variables
       ios_command:
-        commands: show ip eigrp interface
-      register: "show run \| s r e"
+        commands: show run | s r e
+      register: eigrp_config
 
     - name: display output
       debug:
