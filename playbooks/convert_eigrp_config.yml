@@ -4,7 +4,7 @@
   hosts: vIOS
   connection: network_cli
   vars:
-    networks: []
+    general_commands: []
   tasks:
     - name: gather necessary info and store into variables
       ios_command:
@@ -13,10 +13,10 @@
 
     - name: store new variables
       set_fact:
-        networks: "{{ networks }} + [ '{{ item }}' ]"
+        general_commands: "{{ general_commands }} + [ '{{ item }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
       when: ('network' in item) or (item[:6] == ' eigrp')
 
 
     - name: display new variable
-      debug: var=networks
+      debug: var=general_commands
