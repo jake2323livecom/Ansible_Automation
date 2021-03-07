@@ -9,13 +9,7 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
-- name: create new list
-  gather_facts: no
-  hosts: routers
-  connection: local
-  vars:
-    - general_commands: '[ line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network")) ]'
-  
-  tasks:
-    - name: show output
-      debug: var=general_commands
+    - name: create new templated config
+      template:
+        src: test.j2
+        dest: /home/jake/output/

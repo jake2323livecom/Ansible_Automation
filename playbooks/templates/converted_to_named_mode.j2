@@ -19,7 +19,7 @@ router eigrp TEST
    {{ topology_command }}
 {% endfor %}
   exit-af-topology
-{% for general_command in general_commands %}
+{% for general_command in [ line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network")) ] %}
   {{ general_command }}
 {% endfor %}
  exit-address-family
