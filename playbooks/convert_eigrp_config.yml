@@ -14,4 +14,4 @@
         networks: '{{ eigrp_config.stdout_lines[0] | select("match", "network*") }}'
 
     - name: display new variable
-      debug: networks
+      debug: var=networks
