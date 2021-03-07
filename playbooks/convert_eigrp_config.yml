@@ -13,7 +13,7 @@
 
     - name: store new variables
       set_fact:
-        networks: "{{ networks }} + [ '{{ item if item | regex_search('(network.+)') }}' ]"
+        networks: "{{ networks }} + [ '{{ item if item | regex_search('(network.+)') else none }}' ]"
       with_items: "{{ eigrp_config.stdout_lines[0] }}"
 
 
