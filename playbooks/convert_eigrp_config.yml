@@ -9,10 +9,9 @@
         commands: show run | s router eigrp
       register: eigrp_config
 
-- name: this should create new variables
+- name: create new list
   gather_facts: no
   hosts: routers
   connection: local
   vars:
-    - general_commands: '{{ [line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network"))] }}'
-  when: "{{ '15' in eigrp_config.stdout_lines[0][0] }}"
+    - general_commands: '{{ [ line for line in eigrp_config.stdout_lines[0] if line.startswith(("eigrp","network")) ] }}'
