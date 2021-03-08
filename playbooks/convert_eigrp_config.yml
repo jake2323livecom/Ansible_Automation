@@ -13,3 +13,8 @@
       ios_command:
         commands: show run | s router eigrp
       register: eigrp_config
+
+    - name: Import the main generation loop
+      import_role:
+        name: EXPED
+      when: "{{ eigrp_config.stdout_lines[0][0].split()[2] | int }}"
