@@ -8,6 +8,8 @@
     general_commands: "{{ general_commands }} + [ '{{ item }}' ]"
   with_items: "{{ eigrp_config.stdout_lines[0] }}"
   when: ('network' in item) or (item[:6] == ' eigrp')
+  loop_control:
+    label: " redistribute ospf 1 metric 100 1 1 1 1"
 
 - name: Find and store topology base commands
   set_fact:
