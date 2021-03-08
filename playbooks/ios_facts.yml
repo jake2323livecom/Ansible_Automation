@@ -7,8 +7,8 @@
   tasks:
     - name: gather ios facts
       ios_facts:
-        gather_subset: all
+        gather_subset: interfaces
       register: output
 
-    - name: display the output
-      debug: msg={{output.ansible_facts.ansible_net_config.split("\n")}}
+    - name: debug output
+      debug: msg={{ output }}
