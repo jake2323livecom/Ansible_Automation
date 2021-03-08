@@ -11,4 +11,4 @@
       register: output
 
     - name: display the output
-      debug: msg={{output.ansible_net_config.split()}}
+      debug: msg={{output.ansible_facts.ansible_net_config.split()}}
