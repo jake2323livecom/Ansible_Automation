@@ -14,8 +14,7 @@
       set_fact:
         interfaces:
           "{{ item }}:{{ item.description }}"
-      with_items:
-        - "{{ output.ansible_facts.ansible_net_interfaces }}"
+      loop: "{{ output.ansible_facts.ansible_net_interfaces | dict2items }}
 
     - name: show output
       debug: var=interfaces
