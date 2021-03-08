@@ -1,0 +1,14 @@
+---
+- name: this will gather and use facts from an IOS device
+  hosts: vIOS
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: gather ios facts
+      ios_facts:
+        gather_subset: all
+      register: output
+
+    - name: display the output
+      debug: msg=output
