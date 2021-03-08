@@ -13,8 +13,7 @@
     - name: create output
       set_fact:
         interfaces:
-          - "{{ item }}":
-            - "{{ item.description }}"
+          - "{{ item }}"
       with_items:
         output.ansible_facts.ansible_net_interfaces
       when: "item.operstatus == 'up'"
