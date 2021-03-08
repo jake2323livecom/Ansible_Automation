@@ -4,7 +4,7 @@
   gather_facts: no
   connection: network_cli
   vars:
-    - interfaces: []
+    interfaces: []
 
   tasks:
     - name: gather ios facts
