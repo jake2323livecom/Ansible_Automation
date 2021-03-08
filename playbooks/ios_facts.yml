@@ -16,7 +16,7 @@
       set_fact:
         interfaces: "{{ interfaces }} + [ '{{ item.key }}' ]"
       loop: "{{ output.ansible_facts.ansible_net_interfaces | dict2items }}"
-      when: "{{ item.key.operstatus }} == 'up'"
+      when: '{{ item.key.operstatus }} == "up"'
 
     - name: show output
       debug: var=interfaces
