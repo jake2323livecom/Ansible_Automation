@@ -10,5 +10,11 @@
         gather_subset: interfaces
       register: output
 
-    - name: debug output
-      debug: msg={{ output }}
+    - name: create output
+      set_fact:
+        interfaces:
+          - "{{ item }}":
+            - "{{ item.description }}"
+      loop:
+        output.ansible_facts.ansible_net_interfaces
+      when: "{{ item.operstatus == 'up'"
