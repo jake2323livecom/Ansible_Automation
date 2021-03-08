@@ -1,7 +1,7 @@
 ---
 - name: This playbook will convert a traditional eigrp config to named mode
   gather_facts: no
-  hosts: routers
+  hosts: outsite
   connection: network_cli
   vars:
     general_commands: []
