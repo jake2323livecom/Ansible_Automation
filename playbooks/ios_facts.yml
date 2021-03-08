@@ -17,7 +17,7 @@
             - "{{ item.description }}"
       with_items:
         output.ansible_facts.ansible_net_interfaces
-      when: "{{ item.operstatus == 'up'}}"
+      when: "{{ item.'operstatus' == 'up'}}"
 
     - name: show output
       debug: var=interfaces
