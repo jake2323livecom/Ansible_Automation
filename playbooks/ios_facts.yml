@@ -11,4 +11,4 @@
       register: output
 
     - name: display the output
-      debug: msg=output
+      debug: msg={{output}}
