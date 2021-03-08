@@ -14,7 +14,7 @@
 
     - name: create output
       set_fact:
-        interfaces: "{{ interfaces }} + [ '{{ item }}' ]"
+        interfaces: "{{ interfaces }} + [ '{{ item.value }}' ]"
       loop: "{{ output.ansible_facts.ansible_net_interfaces | dict2items }}"
 
     - name: show output
