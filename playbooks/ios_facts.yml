@@ -3,6 +3,8 @@
   hosts: vIOS
   gather_facts: no
   connection: network_cli
+  vars:
+    - interfaces: []
 
   tasks:
     - name: gather ios facts
@@ -12,8 +14,7 @@
 
     - name: create output
       set_fact:
-        interfaces:
-          "{{ item }}"
+        interfaces: "{{ interfaces }} + [ '{{ item }}' ]"
       loop: "{{ output.ansible_facts.ansible_net_interfaces | dict2items }}"
 
     - name: show output
