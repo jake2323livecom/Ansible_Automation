@@ -15,7 +15,7 @@
         interfaces:
           - "{{ item }}"
       with_items:
-        output.ansible_facts.ansible_net_interfaces
+        - "{{ output.ansible_facts.ansible_net_interfaces }}"
 
     - name: show output
       debug: var=interfaces
