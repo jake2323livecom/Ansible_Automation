@@ -15,7 +15,7 @@
     - name: create output
       set_fact:
         interfaces: "{{ interfaces }} + [ '{{ item.value }}' ]"
-      loop: "{{ output.ansible_facts.ansible_net_interfaces }}"
+      loop: "{{ output.ansible_facts | community.general.json_query('ansible_net_interfaces') }}"
 
     - name: show output
       debug: var=interfaces
