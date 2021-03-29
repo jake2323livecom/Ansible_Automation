@@ -23,3 +23,28 @@ router eigrp TEST
   {{ general_command }}
 {% endfor %}
  exit-address-family
+
+router eigrp RED
+ !
+ address-family ipv4 unicast autonomous-system 15
+  af-interface default
+   passive-interface
+  exit-af-interface
+  !
+{% for interface in non_passive_interfaces %}
+  af-interface {{ interface }}
+   no passive-interface
+   authentication mode md5
+   authentication key-chain TEST
+  exit-af-interface
+  !
+{% endfor %}
+  topology base
+{% for topology_base_command in topology_base_commands %}
+   {{ topology_base_command }}
+{% endfor %}
+  exit-af-topology
+{% for general_command in general_commands %}
+  {{ general_command }}
+{% endfor %}
+ exit-address-family
