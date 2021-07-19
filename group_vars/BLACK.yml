@@ -1,1 +1,26 @@
-
+ACLs:
+  - 1
+  - 2
+tacacs:
+  - 1
+  - 2
+EIGRP_KEYS:
+  - 1
+  - 2
+logging_host: 1
+domain_name: "test.local"
+radius: 1
+router_ntp:
+  - 1
+  - 2
+switch_ntp:
+  - 1
+  - 2
+option150:
+  - 1
+  - 2
+dns_servers:
+  - 1
+  - 2
+ppk: 1
+AS: 15
