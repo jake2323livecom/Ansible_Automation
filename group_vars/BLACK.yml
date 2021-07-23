@@ -1,26 +1,29 @@
 ACLs:
-  - 1
-  - 2
+  - standard
+    - 1
+      - "permit 172.29.0.0 0.0.255.255"
+  - extended
+    - 101
+      - "permit 172.29.0.0 0.0.255.255"
 tacacs:
-  - 1
-  - 2
+  - "t-server-1":"172.1.1.1"
+  - "t-server-2":"172.2.2.2"
 EIGRP_KEYS:
-  - 1
-  - 2
-logging_host: 1
+  - 1:"abcde"
+  - 2:"bcdef"
+logging_host: "172.3.3.3"
 domain_name: "test.local"
-radius: 1
+radius: "172.4.4.4"
 router_ntp:
-  - 1
-  - 2
+  - "n-server-1":"172.5.5.5"
+  - "n-server-2":"172.6.6.6"
 switch_ntp:
-  - 1
-  - 2
+  - "n-server-1":"172.7.7.7"
 option150:
-  - 1
-  - 2
+  - "t3":"172.8.8.8"
+  - "t1":"172.9.9.9"
 dns_servers:
-  - 1
-  - 2
+  - "hq":"172.10.10.10"
+  - "t3":"172.11.11.11"
 ppk: 1
 AS: 15
