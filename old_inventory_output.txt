@@ -1,0 +1,79 @@
+{
+    "KL002": {
+        "hosts": [
+            "B-KL002-M-R",
+            "B-KL002-M-SW",
+            "R-KL002-M-KG",
+            "R-KL002-M-R",
+            "R-KL002-M-SW"
+        ],
+        "vars": {
+            "networks": {
+                "": {
+                    "is_pool": false,
+                    "network": "172.29.2.0/29"
+                }
+            }
+        }
+    },
+    "_meta": {
+        "hostvars": {
+            "B-KL002-M-R": {
+                "device_role": "black_router",
+                "device_type": "vios",
+                "enclave": [
+                    "BLACK"
+                ],
+                "interfaces": {},
+                "model": "vios",
+                "platform": "BLACK",
+                "site": "testing",
+                "tenant": "KL002"
+            },
+            "B-KL002-M-SW": {
+                "device_role": "switch",
+                "device_type": "iol_switch",
+                "enclave": [
+                    "BLACK"
+                ],
+                "interfaces": {},
+                "model": "iol_switch",
+                "platform": "BLACK",
+                "site": "testing",
+                "tenant": "KL002"
+            },
+            "R-KL002-M-KG": {
+                "device_role": "kg",
+                "device_type": "kg250x",
+                "enclave": [
+                    "RED"
+                ],
+                "interfaces": {},
+                "model": "kg250x",
+                "platform": "RED",
+                "site": "testing",
+                "tenant": "KL002"
+            },
+            "R-KL002-M-R": {
+                "device_role": "red_router",
+                "device_type": "vios",
+                    "RED"
+                ],
+                "interfaces": {},
+                "model": "vios",
+                "tenant": "KL002"
+            "R-KL002-M-SW": {
+                "device_role": "switch",
+                "device_type": "iol_switch",
+                "enclave": [
+                    "RED"
+                ],
+                "interfaces": {},
+                "model": "iol_switch",
+                "platform": "RED",
+                "site": "testing",
+                "tenant": "KL002"
+            }
+        }
+    }
+}

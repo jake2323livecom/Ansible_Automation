@@ -75,7 +75,7 @@ for dev in devices_get["results"]:
         "interfaces": {},  # placeholder for later
     }
     # Add config context variables without the config_context key
-    hostvars[dev["name"]].update(dev["config_context"])
+    # hostvars[dev["name"]].update(dev["config_context"])
 
     # Not every device has a primary_ip assigned but we will add it to ansible anyway for now.
     # Eventually these should go away and re-enable the 2 lines above
