@@ -5,6 +5,5 @@
   
   tasks:
   - name: see if directory is reflected
-    debug:
-      msg: "hello"
+    debug: var=deployment
 
