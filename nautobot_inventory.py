@@ -2,9 +2,8 @@
 import requests  # To perform the API queries
 import json  # To format and display the final output
 import urllib3  # To disable SSL warning below
-import ipaddress  # To get the network id without having to do an API call to find it
 import pynautobot
-from pprint import pprint
+
 
 # disable SSL warning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

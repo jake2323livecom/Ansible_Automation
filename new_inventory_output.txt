@@ -2,14 +2,13 @@
     "KL002": {
         "hosts": [
             "B-KL002-M-R",
-            "B-KL002-M-SW",
             "R-KL002-M-KG",
             "R-KL002-M-R",
             "R-KL002-M-SW"
         ],
         "vars": {
             "networks": {
-                "": {
+                "BLACK Data": {
                     "is_pool": false,
                     "network": "172.29.2.0/29"
                 }
@@ -19,16 +18,8 @@
     "_meta": {
         "hostvars": {
             "B-KL002-M-R": {
-                "device_role": "black_router",
-                "device_type": "vios",
-                "enclave": [
-                    "BLACK"
-                ],
-                "interfaces": {},
-                "model": "vios",
-                "platform": "BLACK",
-                "site": "testing",
-                "tenant": "KL002"
+                "ansible_host": "172.29.2.6/29",
+                "device_serial": "1111"
             }
         }
     }
