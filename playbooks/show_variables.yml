@@ -1,7 +1,7 @@
 ---
 - name: output variable info
   gather_facts: no
-  hosts: "B-KL002-M-R"
+  hosts: B-KL002-M-R
   
   tasks:
   - name: see if directory is reflected
