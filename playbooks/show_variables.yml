@@ -4,6 +4,7 @@
   hosts: "B-KL002-M-R"
   
   tasks:
-    - name: see if directory is reflected
-      debug:
-        msg: "hello"
+  - name: see if directory is reflected
+    debug:
+      msg: "hello"
+
