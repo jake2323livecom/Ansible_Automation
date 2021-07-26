@@ -1,0 +1,10 @@
+---
+- name: output variable info
+  hosts: B-KL002-M-R
+  gather_facts: no
+  connection: local
+  
+  tasks:
+    - name: see if directory is reflected
+      debug:
+        var: deployment
