@@ -61,7 +61,6 @@ def gqlAPI(query):
     return nb.graphql.query(query=query).json
 
 
-
 enclaveVars = gqlAPI(enclaveQuery)
 tenantVars = gqlAPI(tenantQuery)
 hostVars = gqlAPI(hostQuery)
@@ -87,8 +86,8 @@ finalTenantGroups = {
                     "is_pool": network["is_pool"],
                     "network": network["prefix"],
                 }
+                for network in tenant["networks"]
             }
-            for network in tenant["networks"]
         },
     }
     for tenant in tenantGroups
@@ -98,8 +97,10 @@ finalHosts = {
     "_meta": {
         "hostvars": {
             host.pop("name"): {
-                "ansible_host": host["primary_ip4"]["address"] if host["primary_ip4"] else "",
-                "device_serial": host["serial"] if host["serial"] else ""
+                "ansible_host": host["primary_ip4"]["address"]
+                if host["primary_ip4"]
+                else "",
+                "device_serial": host["serial"] if host["serial"] else "",
             }
             for host in hosts
         }
@@ -110,11 +111,9 @@ finalHosts = {
 # pprint(finalTenantGroups)
 # pprint(finalHosts)
 
-
 inventory = {}
 inventory.update(finalEnclaveGroups)
 inventory.update(finalTenantGroups)
 inventory.update(finalHosts)
 
 print(json.dumps(inventory, indent=4, sort_keys=True))
-

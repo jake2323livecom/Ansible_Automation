@@ -1,4 +1,92 @@
 {
+    "BLACK": {
+        "hosts": [
+            "B-KL002-M-R"
+        ],
+        "vars": {
+            "ACLs": [
+                {
+                    "standard": [
+                        {
+                            "1": [
+                                "permit 172.29.0.0 0.0.255.255"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "extended": [
+                        {
+                            "101": [
+                                "permit 172.29.0.0 0.0.255.255"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "AS": 15,
+            "EIGRP_KEYS": [
+                {
+                    "1": "abcde"
+                },
+                {
+                    "2": "bcdef"
+                }
+            ],
+            "dns_servers": [
+                {
+                    "hq": "172.10.10.10"
+                },
+                {
+                    "t3": "172.11.11.11"
+                }
+            ],
+            "domain_name": "test.local",
+            "logging_host": "172.3.3.3",
+            "option150": [
+                {
+                    "t3": "172.8.8.8"
+                },
+                {
+                    "t1": "172.9.9.9"
+                }
+            ],
+            "ppk": 1,
+            "radius": "172.4.4.4",
+            "router_ntp": [
+                {
+                    "n-server-1": "172.5.5.5"
+                },
+                {
+                    "n-server-2": "172.6.6.6"
+                }
+            ],
+            "switch_ntp": [
+                {
+                    "n-server-1": "172.7.7.7"
+                }
+            ],
+            "tacacs": [
+                {
+                    "t-server-1": "172.1.1.1"
+                },
+                {
+                    "t-server-2": "172.2.2.2"
+                }
+            ]
+        }
+    },
+    "KL001": {
+        "hosts": [],
+        "vars": {
+            "networks": {
+                "RED VOX": {
+                    "is_pool": false,
+                    "network": "172.24.1.0/29"
+                }
+            }
+        }
+    },
     "KL002": {
         "hosts": [
             "B-KL002-M-R",
@@ -15,11 +103,106 @@
             }
         }
     },
+    "KL003": {
+        "hosts": [],
+        "vars": {}
+    },
+    "RED": {
+        "hosts": [
+            "R-KL002-M-KG",
+            "R-KL002-M-R",
+            "R-KL002-M-SW"
+        ],
+        "vars": {
+            "ACLs": [
+                {
+                    "standard": [
+                        {
+                            "1": [
+                                "permit 10.22.0.0 0.0.255.255"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "extended": [
+                        {
+                            "101": [
+                                "permit 10.22.0.0 0.0.255.255"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "AS": 15,
+            "EIGRP_KEYS": [
+                {
+                    "1": "abcde"
+                },
+                {
+                    "2": "bcdef"
+                }
+            ],
+            "dns_servers": [
+                {
+                    "hq": "10.10.10.10"
+                },
+                {
+                    "t3": "10.11.11.11"
+                }
+            ],
+            "domain_name": "test.local",
+            "logging_host": "10.3.3.3",
+            "option150": [
+                {
+                    "t3": "10.8.8.8"
+                },
+                {
+                    "t1": "10.9.9.9"
+                }
+            ],
+            "ppk": 1,
+            "radius": "10.4.4.4",
+            "router_ntp": [
+                {
+                    "n-server-1": "10.5.5.5"
+                },
+                {
+                    "n-server-2": "10.6.6.6"
+                }
+            ],
+            "switch_ntp": [
+                {
+                    "n-server-1": "10.7.7.7"
+                }
+            ],
+            "tacacs": [
+                {
+                    "t-server-1": "10.1.1.1"
+                },
+                {
+                    "t-server-2": "10.2.2.2"
+                }
+            ]
+        }
+    },
     "_meta": {
         "hostvars": {
             "B-KL002-M-R": {
                 "ansible_host": "172.29.2.6/29",
                 "device_serial": "1111"
+            },
+            "R-KL002-M-KG": {
+                "ansible_host": "",
+                "device_serial": "2222"
+            },
+            "R-KL002-M-R": {
+                "ansible_host": "10.22.255.2/32",
+                "device_serial": "3333"
+            },
+            "R-KL002-M-SW": {
+                "ansible_host": "10.22.2.5/29",
+                "device_serial": "4444"
             }
         }
     }
