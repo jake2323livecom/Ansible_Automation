@@ -61,14 +61,14 @@ def gqlAPI(query):
     return nb.graphql.query(query=query).json
 
 
-enclaveVars = gqlAPI(enclaveQuery)
-tenantVars = gqlAPI(tenantQuery)
-hostVars = gqlAPI(hostQuery)
+enclaves = gqlAPI(enclaveQuery)
+tenants = gqlAPI(tenantQuery)
+hosts = gqlAPI(hostQuery)
 
 
-enclaveGroups = enclaveVars["data"]["config_contexts"]
-tenantGroups = tenantVars["data"]["tenants"]
-hosts = hostVars["data"]["_meta"]
+enclaveGroups = enclaves["data"]["config_contexts"]
+tenantGroups = tenants["data"]["tenants"]
+hosts = hosts["data"]["_meta"]
 
 finalEnclaveGroups = {
     group["name"]: {
