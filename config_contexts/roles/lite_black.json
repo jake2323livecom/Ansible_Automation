@@ -1,10 +1,10 @@
 {
     "_metadata": {
-        "name": "medium_red",
+        "name": "lite_black",
         "weight": 1000,
         "description": "Role Specific Variables",
         "is_active": true,
-        "roles": [{"slug": "medium_red"}]
+        "roles": [{"slug": "lite_black"}]
     },
-    "medium": "red"
+    "lite": "black"
 }
