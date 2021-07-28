@@ -90,7 +90,7 @@ finalEnclaveGroups = {
 
 finalRoleGroups = {
     group["name"]: {
-        "hosts": [device["name"] for device in group["roles"][0]["devices"] ],
+        "hosts": [device['name'] for role in group['roles'] for device in role['devices']],
         "vars": group["data"],
     }
     for group in roleGroups
