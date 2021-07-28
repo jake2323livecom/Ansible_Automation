@@ -3,6 +3,7 @@ import requests  # To perform the API queries
 import json  # To format and display the final output
 import urllib3  # To disable SSL warning below
 import pynautobot
+from pprint import pprint
 
 
 # disable SSL warning
@@ -17,6 +18,11 @@ enclaveQuery = """
   config_contexts {
     name
     data
+    roles {
+      devices {
+        name
+      }
+    }
     platforms {
       devices {
         name
@@ -66,17 +72,27 @@ tenants = gqlAPI(tenantQuery)
 hosts = gqlAPI(hostQuery)
 
 
-enclaveGroups = enclaves["data"]["config_contexts"]
+enclaveGroups = [ group for group in enclaves["data"]["config_contexts"] if group['platforms']]
+roleGroups = [ group for group in enclaves["data"]["config_contexts"] if group['roles']]
 tenantGroups = tenants["data"]["tenants"]
 hosts = hosts["data"]["_meta"]
 
 finalEnclaveGroups = {
     group["name"]: {
-        "hosts": [device["name"] for device in group["platforms"][0]["devices"]],
+        "hosts": [device["name"] for device in group["platforms"][0]["devices"] ],
         "vars": group["data"],
     }
     for group in enclaveGroups
 }
+
+finalRoleGroups = {
+    group["name"]: {
+        "hosts": [device["name"] for device in group["roles"][0]["devices"] ],
+        "vars": group["data"],
+    }
+    for group in roleGroups
+}
+
 finalTenantGroups = {
     tenant["name"]: {
         "hosts": [device["name"] for device in tenant["devices"]],
@@ -108,11 +124,13 @@ finalHosts = {
 }
 
 # pprint(finalEnclaveGroups)
+# pprint(finalRoleGroups)
 # pprint(finalTenantGroups)
 # pprint(finalHosts)
 
 inventory = {}
 inventory.update(finalEnclaveGroups)
+inventory.update(finalRoleGroups)
 inventory.update(finalTenantGroups)
 inventory.update(finalHosts)
 
