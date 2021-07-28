@@ -45,5 +45,7 @@
                 ]
             }
         }
-    }
+    },
+    "tun_source": "Gi0/0",
+    "sipr_tun_source": "Gi0/1"
 }

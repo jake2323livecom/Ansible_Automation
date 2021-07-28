@@ -70,5 +70,23 @@
         {
             "t-server-2": "172.2.2.2"
         }
-    ]
+    ],
+    "Tunnels": {
+        "Tunnel101": {
+            "description": "CIS_PRIMARY",
+            "bandwidth": 512,
+            "mtu": 1256,
+            "adjustmss": 1216,
+            "delay": 4500,
+            "source": "{{ tun_source }}",
+            "destination": "10.29.1.1"
+        },
+        "Tunnel102": {
+            "description": "CIS_SECONDARY",
+            "bandwidth": 512,
+            "delay": 4000,
+            "source": "{{ tun_source }}",
+            "destination": "10.29.1.2"
+        }
+    }
 }
