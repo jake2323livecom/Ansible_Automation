@@ -6,5 +6,42 @@
         "is_active": true,
         "roles": [{"slug": "medium_black"}]
     },
-    "medium": "black"
+    "EIGRP_CONFIG": {
+        "BLACK": {
+            "2163": {
+                "default": [
+                    "authentication mode md5",
+                    "authentication key-chain BLACK-Wan",
+                    "passive-interface"
+                ],
+                "interfaces": [
+                    "default",
+                    "Tunnel321",
+                    "Tunnel325"
+                ],
+                "topology_base": {
+                    "distribute_lists": {
+                        "EXPED-OUT out": [
+                            "Tunnel321",
+                            "Tunnel325"
+                        ],
+                        "MAIN-IN in": [
+                            "Tunnel321",
+                            "Tunnel325"
+                        ]
+                    }
+                },
+                "network_extra_lines": [
+                    "eigrp router-id {{ ansible_host }}",
+                    "eigrp stub connected redistributed leak-map EXPED"
+                ],
+                "networks": [
+                    "172.29.0.0"
+                ],
+                "topology_extra_lines": [
+                    "redistribute mobile metric 2048 500 1 1 1500"
+                ]
+            }
+        }
+    }
 }
