@@ -1,0 +1,79 @@
+{
+    "_metadata": {
+        "name": "red",
+        "weight": 1000,
+        "description": "Enclave Specific Variables",
+        "is_active": true,
+        "roles": [{"slug": "red"}]
+    },
+    "ACLs": [
+        {
+            "standard": [
+                {
+                    "1": [
+                        "permit 10.22.0.0 0.0.255.255"
+                    ]
+                }
+            ]
+        },
+        {
+            "extended": [
+                {
+                    "101": [
+                        "permit 10.22.0.0 0.0.255.255"
+                    ]
+                }
+            ]
+        }
+    ],
+    "AS": 15,
+    "EIGRP_KEYS": [
+        {
+            "1": "abcde"
+        },
+        {
+            "2": "bcdef"
+        }
+    ],
+    "dns_servers": [
+        {
+            "hq": "10.10.10.10"
+        },
+        {
+            "t3": "10.11.11.11"
+        }
+    ],
+    "domain_name": "test.local",
+    "logging_host": "10.3.3.3",
+    "option150": [
+        {
+            "t3": "10.8.8.8"
+        },
+        {
+            "t1": "10.9.9.9"
+        }
+    ],
+    "ppk": 1,
+    "radius": "10.4.4.4",
+    "router_ntp": [
+        {
+            "n-server-1": "10.5.5.5"
+        },
+        {
+            "n-server-2": "10.6.6.6"
+        }
+    ],
+    "switch_ntp": [
+        {
+            "n-server-1": "10.7.7.7"
+        }
+    ],
+    "tacacs": [
+        {
+            "t-server-1": "10.1.1.1"
+        },
+        {
+            "t-server-2": "10.2.2.2"
+        }
+    ]
+}
