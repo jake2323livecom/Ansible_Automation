@@ -1,0 +1,10 @@
+{
+    "_metadata": {
+        "name": "heavy_red",
+        "weight": 1000,
+        "description": "EIGRP CONFIG",
+        "is_active": true,
+        "roles": [{"slug": "heavy_red"}]
+    },
+    "it": "worked"
+}
