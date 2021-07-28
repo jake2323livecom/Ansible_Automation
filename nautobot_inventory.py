@@ -10,8 +10,16 @@ from pprint import pprint
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # User definable variables
-netbox_url = "http://192.168.14.129:8000"
-netbox_token = "0697aefb87c38120c64883ef231ded2b9f19838e"
+netbox_url = "https://192.168.14.138"
+netbox_token = "1626435c136f5b1ed4983ad171a4b01e1d55ba73"
+
+# API call parameters
+nb = pynautobot.api(url=netbox_url, token=netbox_token)
+nb.http_session.verify = False
+
+
+def gqlAPI(query):
+    return nb.graphql.query(query=query).json
 
 enclaveQuery = """
 {
@@ -60,11 +68,6 @@ hostQuery = """
   }
 }
 """
-nb = pynautobot.api(url=netbox_url, token=netbox_token)
-
-
-def gqlAPI(query):
-    return nb.graphql.query(query=query).json
 
 
 enclaves = gqlAPI(enclaveQuery)
