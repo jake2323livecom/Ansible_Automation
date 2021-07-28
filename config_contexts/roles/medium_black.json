@@ -16,6 +16,7 @@
                 ],
                 "interfaces": [
                     "default",
+                    "Gi0/0",
                     "Tunnel321",
                     "Tunnel325"
                 ],
