@@ -118,7 +118,7 @@ finalHosts = {
     "_meta": {
         "hostvars": {
             host.pop("name"): {
-                "ansible_host": host["primary_ip4"]["address"]
+                "ansible_host": host["primary_ip4"]["host"]
                 if host["primary_ip4"]
                 else "",
                 "device_serial": host["serial"] if host["serial"] else "",
