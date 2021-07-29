@@ -1,9 +1,9 @@
 ---
 - name: output variable info
   gather_facts: no
-  hosts: B-KL002-M-R
+  hosts: B-KL001-H-R
   
   tasks:
   - name: see if directory is reflected
-    debug: var=deployment
+    debug: var=required_tunnels
 
