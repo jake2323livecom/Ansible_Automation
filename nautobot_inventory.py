@@ -105,7 +105,8 @@ finalTenantGroups = {
                 network["role"]["name"]: {
                     "is_pool": network["is_pool"],
                     "network": network["prefix"],
-                    "last_useable": str(ipaddress.ip_network(network['prefix'])[-2])
+                    "last_usable": str(ipaddress.ip_network(network['prefix'])[-2]),
+                    "first_usable": str(ipaddress.ip_network(network['prefix'])[1])
                 }
                 for network in tenant["networks"]
             }
