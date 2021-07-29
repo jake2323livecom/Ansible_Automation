@@ -64,7 +64,7 @@ hostQuery = """
     name
     serial
     primary_ip4 {
-      address
+      host
     }
   }
 }
