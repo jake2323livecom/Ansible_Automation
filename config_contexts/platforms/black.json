@@ -91,5 +91,8 @@
     },
     "required_pools": [
         "data"
+    ],
+    "required_tunnels": [
+        "Tunnel101"
     ]
 }

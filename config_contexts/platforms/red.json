@@ -92,5 +92,8 @@
     "required_pools": [
         "data",
         "voice"
+    ],
+    "required_tunnels": [
+        "Tunnel309"
     ]
 }

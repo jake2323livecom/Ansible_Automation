@@ -9,5 +9,9 @@
     "required_pools": [
         "data",
         "vrf_mgmt"
+    ],
+    "required_tunnels": [
+        "Tunnel101",
+        "Tunnel102"
     ]
 }
