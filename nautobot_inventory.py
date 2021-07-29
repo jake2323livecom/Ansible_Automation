@@ -4,6 +4,7 @@ import json  # To format and display the final output
 import urllib3  # To disable SSL warning below
 import pynautobot
 from pprint import pprint
+import ipaddress
 
 
 # disable SSL warning
@@ -103,7 +104,8 @@ finalTenantGroups = {
             "networks": {
                 network["role"]["name"]: {
                     "is_pool": network["is_pool"],
-                    "network": network["prefix"]
+                    "network": network["prefix"],
+                    "last_useable": ipaddress.ip_network(network['prefix'])[-2]
                 }
                 for network in tenant["networks"]
             }
