@@ -103,8 +103,7 @@ finalTenantGroups = {
             "networks": {
                 network["role"]["name"]: {
                     "is_pool": network["is_pool"],
-                    "network": network["prefix"],
-                    "last_usable": "{{ network['prefix'] | ipaddr('network') }}"
+                    "network": network["prefix"]
                 }
                 for network in tenant["networks"]
             }
