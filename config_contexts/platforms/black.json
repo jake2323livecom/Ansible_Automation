@@ -94,6 +94,5 @@
     ],
     "required_tunnels": [
         "Tunnel101"
-    ],
-    "data_last_useable": "{{ networks['black_data']['network'] | ipaddr('network') }}"
+    ]
 }
