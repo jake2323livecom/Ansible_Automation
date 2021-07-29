@@ -6,5 +6,9 @@
         "is_active": true,
         "roles": [{"slug": "heavy_red"}]
     },
-    "heavy": "red"
+    "required_pools": [
+        "data",
+        "voice",
+        "vrf_mgmt"
+    ]
 }

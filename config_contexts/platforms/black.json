@@ -88,5 +88,8 @@
             "source": "{{ tun_source }}",
             "destination": "10.29.1.2"
         }
-    }
+    },
+    "required_pools": [
+        "data"
+    ]
 }

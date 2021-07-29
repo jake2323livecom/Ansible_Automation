@@ -88,5 +88,9 @@
             "source": "{{ tun_source }}",
             "destination": "192.168.26.1"
         }
-    }
+    },
+    "required_pools": [
+        "data",
+        "voice"
+    ]
 }
