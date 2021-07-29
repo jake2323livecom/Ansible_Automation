@@ -1,9 +1,9 @@
 ---
 - name: output variable info
   gather_facts: no
-  hosts: B-KL002-M-R
+  hosts: KL002
   
   tasks:
   - name: see if directory is reflected
-    debug: var=required_tunnels
+    debug: var=tacacs_source
 
