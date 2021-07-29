@@ -76,7 +76,7 @@ hosts = gqlAPI(hostQuery)
 
 
 enclaveGroups = [ group for group in enclaves["data"]["config_contexts"] if group['platforms']]
-roleGroups = [ group for group in enclaves["data"]["config_contexts"] if group['roles'] or group['device_types']]
+roleGroups = [ group for group in enclaves["data"]["config_contexts"] if group['roles']]
 tenantGroups = tenants["data"]["tenants"]
 hosts = hosts["data"]["_meta"]
 
