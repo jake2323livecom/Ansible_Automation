@@ -6,5 +6,5 @@
         "is_active": true,
         "roles": [{"slug": "kg"}]
     },
-    "kg_pt_ip": "{{ networks['kg_pt'][first_usable'] }}"
+    "kg_pt_ip": "{{ networks['kg_pt']['first_usable'] }}"
 }
