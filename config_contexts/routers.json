@@ -7,7 +7,8 @@
         "device_types": [{"slug": "csr"},{"slug": "vios"},{"slug": "iol_router"}]
     },
     "reqdACLs": [
-        1
+        1,
+        2
     ],
     "tacacs_source": "Loopback0"
 }
