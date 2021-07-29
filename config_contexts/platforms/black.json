@@ -94,6 +94,5 @@
     ],
     "required_tunnels": [
         "Tunnel101"
-    ],
-    "test": "test"
+    ]
 }

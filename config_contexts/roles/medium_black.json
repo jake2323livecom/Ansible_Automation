@@ -45,6 +45,5 @@
             }
         }
     },
-    "tun_source": "Gi0/0",
-    "result": "{{ test }}"
+    "tun_source": "Gi0/0"
 }
