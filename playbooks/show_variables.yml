@@ -5,5 +5,5 @@
   
   tasks:
   - name: see if directory is reflected
-    debug: var=data_last_usable
+    debug: var=networks
 
