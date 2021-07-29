@@ -4,7 +4,7 @@
         "weight": 1000,
         "description": "Role Specific Variables",
         "is_active": true,
-        "roles": [{"slug": "csr"}]
+        "device_types": [{"slug": "csr"}]
     },
     "reqdACLs": [
         1
