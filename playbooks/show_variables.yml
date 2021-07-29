@@ -5,5 +5,5 @@
   
   tasks:
   - name: see if directory is reflected
-    debug: var=EIGRP_CONFIG
+    debug: var=ansible_host
 
