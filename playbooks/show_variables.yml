@@ -5,5 +5,5 @@
   
   tasks:
   - name: see if directory is reflected
-    debug: var=tacacs_source
+    debug: var=data_last_usable
 
