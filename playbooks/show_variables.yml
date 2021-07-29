@@ -5,5 +5,10 @@
   
   tasks:
   - name: see if directory is reflected
-    debug: var=kg_pt_ip
+    debug:
+      var:
+        - kg_pt_ip
+        - kg_pt_gw
+        - kg_ct_ip
+        - kg_ct_gw
 
