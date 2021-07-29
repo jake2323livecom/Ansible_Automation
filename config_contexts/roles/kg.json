@@ -8,6 +8,6 @@
     },
     "kg_pt_ip": "{{ networks['kg_pt']['first_usable'] }}",
     "kg_pt_gw": "{{ networks['kg_pt']['last_usable'] }}",
-    "kg_ct_ip": "{{ networks['black_data']['first_usable'] if 'J-' in inventory_hostname else (networks['black_data']['first_usable'] | ipmath(1))}}",
+    "kg_ct_ip": "{{ networks['black_data']['first_usable'] if 'R-' in inventory_hostname else (networks['black_data']['first_usable'] | ipmath(1))}}",
     "kg_ct_gw": "{{ networks['black_data']['last_usable"
 }
